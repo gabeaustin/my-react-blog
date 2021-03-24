@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css"
 
 export default function CreatePost() {
@@ -7,6 +7,10 @@ export default function CreatePost() {
     const [userName, setUserName] = useState("");
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
+
+    useEffect(() => {
+        console.log(`${userName} is ${title} has ${text}`)
+    }, [userName, title, text])
 
     return (
             <div className="CreatePost">
