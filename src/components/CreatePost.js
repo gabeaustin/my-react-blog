@@ -8,9 +8,10 @@ export default function CreatePost() {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
 
-    useEffect(() => {
-        console.log(`${userName} is ${title} has ${text}`)
-    }, [userName, title, text])
+    // this makes request to the backend
+    const submitPost = () => {
+
+    }
 
     return (
             <div className="CreatePost">
@@ -43,6 +44,8 @@ export default function CreatePost() {
                             onChange={(e) => { setText(e.target.value)
                         }}/>
                     </div>
+
+                    <button className="btn btn-primary" onClick={submitPost}>Submit Post</button>
                 </div>
             </div>
     )
