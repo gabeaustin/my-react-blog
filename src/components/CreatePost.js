@@ -1,23 +1,43 @@
-import React from 'react';
+import React, { useState } from "react";
 import "../App.css"
 
 export default function CreatePost() {
+
+    // creating STATEs
+    const [userName, setUserName] = useState("");
+    const [title, setTitle] = useState("");
+    const [text, setText] = useState("");
+
     return (
             <div className="CreatePost">
                 <div className="uploadPost border m-5 p-3">
                     <div class="mb-3">
                         <label class="form-label">Author</label>
-                        <input type="text" class="form-control" placeholder="Who Wrote It Best" />
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Who Wrote It Best" 
+                            onChange={(e) => { setUserName(e.target.value); 
+                        }}/>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Title</label>
-                        <input type="text" class="form-control" placeholder="Your Title" />
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Your Title" 
+                            onChange={(e) => { setTitle(e.target.value);
+                        }}/>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Blog Text</label>
-                        <textarea class="form-control" placeholder="What do you want to blog about?" />
+                        <textarea 
+                            class="form-control" 
+                            placeholder="What do you want to blog about?" 
+                            onChange={(e) => { setText(e.target.value)
+                        }}/>
                     </div>
                 </div>
             </div>
